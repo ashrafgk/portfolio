@@ -1,0 +1,37 @@
+body {
+    background-color: #121212;
+    font: 1em "Gilroy";
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: 'font/Gilroy-Regular.woff';
+    font-style: normal;
+}
+
+h1 {
+    font-size: 7rem;
+}
+h2 {
+    font-size: 2rem;
+}
+p {
+    font-size: 1rem;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.main-header {
+    color: white;
+    height: 100vh;
+    text-align: center;
+}
+
+.f-vertical-center {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

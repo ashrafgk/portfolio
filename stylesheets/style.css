@@ -1,0 +1,45 @@
+/* line 1, ../sass/_content.scss */
+body {
+  background-color: #121212;
+  font: 1em "Gilroy";
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: 'font/Gilroy-Regular.woff';
+  font-style: normal;
+}
+/* line 12, ../sass/_content.scss */
+h1 {
+  font-size: 7rem;
+}
+
+/* line 15, ../sass/_content.scss */
+h2 {
+  font-size: 2rem;
+}
+
+/* line 18, ../sass/_content.scss */
+p {
+  font-size: 1rem;
+}
+
+/* line 22, ../sass/_content.scss */
+.bold {
+  font-weight: bold;
+}
+
+/* line 26, ../sass/_content.scss */
+.main-header {
+  color: white;
+  height: 100vh;
+  text-align: center;
+}
+
+/* line 32, ../sass/_content.scss */
+.f-vertical-center {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
