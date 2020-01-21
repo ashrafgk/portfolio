@@ -11,7 +11,7 @@ function onload() {
 		console.log(url);
 
 		var img = document.getElementById("video");
-		img.src = url;
+		video.src = url;
 	}
 
 	xhr.send();
