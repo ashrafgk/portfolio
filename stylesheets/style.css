@@ -11,12 +11,12 @@ body {
 }
 /* line 12, ../sass/_content.scss */
 h1 {
-  font-size: 7rem;
+  font-size: 4rem;
 }
 
 /* line 15, ../sass/_content.scss */
 h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 /* line 18, ../sass/_content.scss */
@@ -33,13 +33,55 @@ p {
 .main-header {
   color: white;
   height: 100vh;
+  position: relative;
   text-align: center;
 }
 
-/* line 32, ../sass/_content.scss */
+/* line 33, ../sass/_content.scss */
 .f-vertical-center {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+/* line 41, ../sass/_content.scss */
+.animated-screen {
+  background-color: white;
+  height: 100vh;
+  left: 0;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transform: scale3d(1, 1, 1);
+  transition: 2s transform 1s;
+}
+
+/* line 53, ../sass/_content.scss */
+section.is-visible .animated-screen {
+  opacity: 1;
+  transform: scale3d(1, 0, 1);
+}
+
+/* line 58, ../sass/_content.scss */
+header {
+  opacity: 0;
+  filter: blur(21px);
+  transition: 2.5s opacity 3s, 3s filter 3s;
+}
+/* line 62, ../sass/_content.scss */
+header h1 {
+  font-size: 8.2rem;
+  line-height: 1;
+}
+/* line 66, ../sass/_content.scss */
+header h2 {
+  font-size: 2rem;
+}
+
+/* line 71, ../sass/_content.scss */
+section.is-visible header {
+  opacity: 1;
+  filter: blur(0);
 }

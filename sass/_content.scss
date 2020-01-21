@@ -10,10 +10,10 @@ body {
 }
 
 h1 {
-    font-size: 7rem;
+    font-size: 4rem;
 }
 h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 p {
     font-size: 1rem;
@@ -26,6 +26,7 @@ p {
 .main-header {
     color: white;
     height: 100vh;
+    position: relative;
     text-align: center;
 }
 
@@ -34,4 +35,40 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+
+.animated-screen {
+    background-color: white;
+    height: 100vh;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    transform: scale3d(1,1,1);
+    transition: 2s transform 1s;
+}
+
+section.is-visible .animated-screen {
+    opacity: 1;
+    transform: scale3d(1, 0, 1);
+}
+
+header {
+    opacity: 0;
+    filter: blur(21px);
+    transition: 2.5s opacity 3s, 3s filter 3s;
+    h1 {
+        font-size: 8.2rem;
+        line-height: 1;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+section.is-visible header {
+    opacity: 1;
+    filter: blur(0);
 }
