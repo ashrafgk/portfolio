@@ -1,48 +1,8 @@
-<!DOCTYPE html>
 <html>
+<script src="app.js"></script>
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Spoon-Knife -- by me</title>
-</head>
-
-<body>
-    <video controls="" preload="auto" id="_video"></video>
-    <script type="text/javascript">
-    var xhr = new XMLHttpRequest();
-    xhr.responseType = 'blob';
-
-    xhr.onload = function() {
-
-        var reader = new FileReader();
-
-        reader.onloadend = function() {
-
-            var byteCharacters = atob(reader.result.slice(reader.result.indexOf(',') + 1));
-
-            var byteNumbers = new Array(byteCharacters.length);
-
-            for (var i = 0; i < byteCharacters.length; i++) {
-
-                byteNumbers[i] = byteCharacters.charCodeAt(i);
-
-            }
-
-            var byteArray = new Uint8Array(byteNumbers);
-            var blob = new Blob([byteArray], { type: 'video/mp4' });
-            var url = URL.createObjectURL(blob);
-
-            document.getElementById('_video').src = url;
-
-        }
-
-        reader.readAsDataURL(xhr.response);
-
-    };
-
-    xhr.open('GET', 'video.mp4');
-    xhr.send();
-    </script>
+<body onload="onload()">
+    <video id="image" controls="" preload="auto"></video>
 </body>
 
 </html>
