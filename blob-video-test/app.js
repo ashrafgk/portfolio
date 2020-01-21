@@ -10,7 +10,7 @@ function onload() {
 
 		console.log(url);
 
-		var img = document.getElementById("video");
+		var video = document.getElementById("video");
 		video.src = url;
 	}
 
