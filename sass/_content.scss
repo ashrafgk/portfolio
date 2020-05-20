@@ -1,5 +1,5 @@
 body {
-    background-color: #121212;
+    background-color: #ffffff;
     font: 1em "Gilroy";
 }
 
@@ -10,11 +10,13 @@ body {
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 20rem;
 }
+
 h2 {
-    font-size: 2.5rem;
+    font-size: 4.8rem;
 }
+
 p {
     font-size: 1rem;
 }
@@ -39,36 +41,90 @@ p {
 
 
 .animated-screen {
-    background-color: white;
+    background-color: #121212;
     height: 100vh;
     left: 0;
     opacity: 1;
     position: absolute;
     top: 0;
     width: 100%;
-    transform: scale3d(1,1,1);
-    transition: 2s transform 1s;
+    transform: scale3d(0, 1, 1);
+    transition: 1.25s transform 1s linear;
 }
 
 section.is-visible .animated-screen {
     opacity: 1;
-    transform: scale3d(1, 0, 1);
+    transform: scale3d(1, 1, 1);
 }
 
 header {
-    opacity: 0;
-    filter: blur(21px);
-    transition: 2.5s opacity 3s, 3s filter 3s;
+    position: relative;
+    overflow: hidden;
+
     h1 {
-        font-size: 8.2rem;
+        font-size: 5.5rem;
         line-height: 1;
+        position: relative;
+        opacity: 0;
+        transition: 1s opacity 4s ease-out;
     }
+
     h2 {
-        font-size: 2rem;
+        font-size: 3rem;
+        position: relative;
+        opacity: 0;
+        transition: 1s opacity 4.5s ease-out;
     }
 }
 
 section.is-visible header {
+    h1 {
+        opacity: 1;
+    }
+
+    h2 {
+        opacity: 1;
+    }
+}
+
+.translated-screen2 {
+    background-color: #121212;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    transform: translateX(-105%);
+    transition: 1s transform 3.5s linear;
+}
+
+section.is-visible .translated-screen2 {
+    transform: translateX(-0%);
+}
+
+.profile-picture {
+    opacity: 0;
+    transition: 2.5s opacity 3s;
+}
+
+section.is-visible .profile-picture {
     opacity: 1;
-    filter: blur(0);
+}
+
+.translated-screen {
+    background-color: #121212;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    transform: translateX(0px);
+    transition: 0.8s transform 3s linear;
+}
+
+section.is-visible .translated-screen {
+    transform: translateX(-100%);
+}
+
+.gallery {
+    background: white;
 }

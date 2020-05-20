@@ -1,6 +1,6 @@
 /* line 1, ../sass/_content.scss */
 body {
-  background-color: #121212;
+  background-color: #ffffff;
   font: 1em "Gilroy";
 }
 
@@ -11,25 +11,25 @@ body {
 }
 /* line 12, ../sass/_content.scss */
 h1 {
-  font-size: 4rem;
+  font-size: 20rem;
 }
 
-/* line 15, ../sass/_content.scss */
+/* line 16, ../sass/_content.scss */
 h2 {
-  font-size: 2.5rem;
+  font-size: 4.8rem;
 }
 
-/* line 18, ../sass/_content.scss */
+/* line 20, ../sass/_content.scss */
 p {
   font-size: 1rem;
 }
 
-/* line 22, ../sass/_content.scss */
+/* line 24, ../sass/_content.scss */
 .bold {
   font-weight: bold;
 }
 
-/* line 26, ../sass/_content.scss */
+/* line 28, ../sass/_content.scss */
 .main-header {
   color: white;
   height: 100vh;
@@ -37,7 +37,7 @@ p {
   text-align: center;
 }
 
-/* line 33, ../sass/_content.scss */
+/* line 35, ../sass/_content.scss */
 .f-vertical-center {
   align-items: center;
   display: flex;
@@ -45,43 +45,100 @@ p {
   justify-content: center;
 }
 
-/* line 41, ../sass/_content.scss */
+/* line 43, ../sass/_content.scss */
 .animated-screen {
-  background-color: white;
+  background-color: #121212;
   height: 100vh;
   left: 0;
   opacity: 1;
   position: absolute;
   top: 0;
   width: 100%;
-  transform: scale3d(1, 1, 1);
-  transition: 2s transform 1s;
+  transform: scale3d(0, 1, 1);
+  transition: 1.25s transform 1s linear;
 }
 
-/* line 53, ../sass/_content.scss */
+/* line 55, ../sass/_content.scss */
 section.is-visible .animated-screen {
   opacity: 1;
-  transform: scale3d(1, 0, 1);
+  transform: scale3d(1, 1, 1);
 }
 
-/* line 58, ../sass/_content.scss */
+/* line 60, ../sass/_content.scss */
 header {
-  opacity: 0;
-  filter: blur(21px);
-  transition: 2.5s opacity 3s, 3s filter 3s;
+  position: relative;
+  overflow: hidden;
 }
-/* line 62, ../sass/_content.scss */
+/* line 64, ../sass/_content.scss */
 header h1 {
-  font-size: 8.2rem;
+  font-size: 5.5rem;
   line-height: 1;
+  position: relative;
+  opacity: 0;
+  transition: 1s opacity 4s ease-out;
 }
-/* line 66, ../sass/_content.scss */
+/* line 72, ../sass/_content.scss */
 header h2 {
-  font-size: 2rem;
+  font-size: 3rem;
+  position: relative;
+  opacity: 0;
+  transition: 1s opacity 4.5s ease-out;
 }
 
-/* line 71, ../sass/_content.scss */
-section.is-visible header {
+/* line 81, ../sass/_content.scss */
+section.is-visible header h1 {
   opacity: 1;
-  filter: blur(0);
+}
+/* line 85, ../sass/_content.scss */
+section.is-visible header h2 {
+  opacity: 1;
+}
+
+/* line 90, ../sass/_content.scss */
+.translated-screen2 {
+  background-color: #121212;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  transform: translateX(-105%);
+  transition: 1s transform 3.5s linear;
+}
+
+/* line 101, ../sass/_content.scss */
+section.is-visible .translated-screen2 {
+  transform: translateX(0%);
+}
+
+/* line 105, ../sass/_content.scss */
+.profile-picture {
+  opacity: 0;
+  transition: 2.5s opacity 3s;
+}
+
+/* line 110, ../sass/_content.scss */
+section.is-visible .profile-picture {
+  opacity: 1;
+}
+
+/* line 114, ../sass/_content.scss */
+.translated-screen {
+  background-color: #121212;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  transform: translateX(0px);
+  transition: 0.8s transform 3s linear;
+}
+
+/* line 124, ../sass/_content.scss */
+section.is-visible .translated-screen {
+  transform: translateX(-100%);
+}
+
+/* line 128, ../sass/_content.scss */
+.gallery {
+  background: white;
 }
