@@ -43,9 +43,7 @@ const callback = (entries, observer) => {
 
         if (entry.intersectionRatio >= 0.25) {
             target.classList.add("is-visible");
-        } else {
-            target.classList.remove("is-visible");
-        }
+        } 
     });
 };
 

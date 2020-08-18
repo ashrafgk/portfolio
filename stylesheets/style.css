@@ -2,6 +2,7 @@
 body {
   background-color: #ffffff;
   font: 1em "Gilroy";
+  line-height: 1.3;
 }
 
 @font-face {
@@ -9,35 +10,60 @@ body {
   src: 'font/Gilroy-Regular.woff';
   font-style: normal;
 }
-/* line 12, ../sass/_content.scss */
-h1 {
-  font-size: 20rem;
-}
-
 /* line 16, ../sass/_content.scss */
+.container {
+  width: 900px;
+  margin: auto;
+}
+
+/* line 21, ../sass/_content.scss */
+.scrolly {
+  position: relative;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+/* line 28, ../sass/_content.scss */
+section {
+  scroll-snap-align: start;
+}
+
+/* line 32, ../sass/_content.scss */
+h1 {
+  font-size: 5.5rem;
+}
+
+/* line 36, ../sass/_content.scss */
 h2 {
-  font-size: 4.8rem;
+  font-size: 3rem;
 }
 
-/* line 20, ../sass/_content.scss */
+/* line 40, ../sass/_content.scss */
 p {
-  font-size: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+/* line 44, ../sass/_content.scss */
+p:not(:last-child) {
+  margin-bottom: 1rem;
 }
 
-/* line 24, ../sass/_content.scss */
+/* line 49, ../sass/_content.scss */
 .bold {
   font-weight: bold;
 }
 
-/* line 28, ../sass/_content.scss */
+/* line 55, ../sass/_content.scss */
 .main-header {
+  background-color: #121212;
   color: white;
   height: 100vh;
   position: relative;
   text-align: center;
 }
 
-/* line 35, ../sass/_content.scss */
+/* line 63, ../sass/_content.scss */
 .f-vertical-center {
   align-items: center;
   display: flex;
@@ -45,31 +71,12 @@ p {
   justify-content: center;
 }
 
-/* line 43, ../sass/_content.scss */
-.animated-screen {
-  background-color: #121212;
-  height: 100vh;
-  left: 0;
-  opacity: 1;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  transform: scale3d(0, 1, 1);
-  transition: 1.25s transform 1s linear;
-}
-
-/* line 55, ../sass/_content.scss */
-section.is-visible .animated-screen {
-  opacity: 1;
-  transform: scale3d(1, 1, 1);
-}
-
-/* line 60, ../sass/_content.scss */
+/* line 72, ../sass/_content.scss */
 header {
   position: relative;
   overflow: hidden;
 }
-/* line 64, ../sass/_content.scss */
+/* line 76, ../sass/_content.scss */
 header h1 {
   font-size: 5.5rem;
   line-height: 1;
@@ -77,7 +84,7 @@ header h1 {
   opacity: 0;
   transition: 1s opacity 4s ease-out;
 }
-/* line 72, ../sass/_content.scss */
+/* line 84, ../sass/_content.scss */
 header h2 {
   font-size: 3rem;
   position: relative;
@@ -85,60 +92,112 @@ header h2 {
   transition: 1s opacity 4.5s ease-out;
 }
 
-/* line 81, ../sass/_content.scss */
+/* line 93, ../sass/_content.scss */
 section.is-visible header h1 {
   opacity: 1;
 }
-/* line 85, ../sass/_content.scss */
+/* line 97, ../sass/_content.scss */
 section.is-visible header h2 {
   opacity: 1;
 }
 
-/* line 90, ../sass/_content.scss */
-.translated-screen2 {
-  background-color: #121212;
+/* line 102, ../sass/_content.scss */
+.profile-picture {
+  position: relative;
+}
+
+/* line 106, ../sass/_content.scss */
+.profile-picture:before {
+  content: "";
+  background-color: #fff;
   height: 100%;
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
-  transform: translateX(-105%);
-  transition: 1s transform 3.5s linear;
-}
-
-/* line 101, ../sass/_content.scss */
-section.is-visible .translated-screen2 {
-  transform: translateX(0%);
-}
-
-/* line 105, ../sass/_content.scss */
-.profile-picture {
-  opacity: 0;
-  transition: 2.5s opacity 3s;
-}
-
-/* line 110, ../sass/_content.scss */
-section.is-visible .profile-picture {
-  opacity: 1;
-}
-
-/* line 114, ../sass/_content.scss */
-.translated-screen {
-  background-color: #121212;
-  height: 100%;
-  position: absolute;
+  transform: translateX(100%) scaleX(0);
   z-index: 1;
-  width: 100%;
-  transform: translateX(0px);
-  transition: 0.8s transform 3s linear;
+  transition: 1s transform 1.5s linear;
+}
+
+/* line 119, ../sass/_content.scss */
+section.is-visible .profile-picture:before {
+  transform: translateX(0%) scaleX(1);
 }
 
 /* line 124, ../sass/_content.scss */
-section.is-visible .translated-screen {
-  transform: translateX(-100%);
+.profile-picture {
+  overflow: hidden;
+}
+/* line 126, ../sass/_content.scss */
+.profile-picture img {
+  transform: scale(1.24);
+  transition: 2s transform 1s ease;
+  z-index: 2;
+  position: relative;
 }
 
-/* line 128, ../sass/_content.scss */
+/* line 133, ../sass/_content.scss */
+.translated-screen2 {
+  background: #121212;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 2s transform 1s ease;
+  transform: translateX(0%) scaleX(0);
+}
+
+/* line 145, ../sass/_content.scss */
+section.is-visible .translated-screen2 {
+  transform: translateX(0%) scaleX(1);
+}
+/* line 149, ../sass/_content.scss */
+section.is-visible .profile-picture img {
+  transform: scale(1);
+}
+/* line 153, ../sass/_content.scss */
+section.is-visible .profile-picture:before {
+  transform: translateX(0%) scaleX(1);
+}
+
+/* line 160, ../sass/_content.scss */
 .gallery {
   background: white;
+  position: relative;
+  z-index: 2;
+}
+
+/* line 166, ../sass/_content.scss */
+.gap-south-1 {
+  margin-bottom: 1rem;
+}
+
+/* line 170, ../sass/_content.scss */
+.gap-south-2 {
+  margin-bottom: 2rem;
+}
+
+/* line 174, ../sass/_content.scss */
+.introduction {
+  background: #121212;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+/* line 181, ../sass/_content.scss */
+img {
+  max-width: 100%;
+  margin: auto;
+}
+
+/* line 186, ../sass/_content.scss */
+.row-figure {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5rem;
+  height: 100vh;
+  align-items: center;
 }
