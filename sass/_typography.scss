@@ -1,0 +1,31 @@
+h1 {
+    font-size: 4.75rem;
+    color: #DD4A38;
+    font-weight: bold;
+    line-height: 1.25;
+}
+
+h2 {
+    font-size: 4.25rem;
+    font-weight: bold;
+    line-height: 1.25;
+}
+h3 {
+    font-size: 3.25rem;
+    font-weight: bold;
+    line-height: 1.25;
+}
+
+p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+
+    &:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}

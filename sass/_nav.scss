@@ -1,0 +1,38 @@
+
+header.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--bg);
+}
+nav {
+    display: grid;
+    grid-template-columns: 200px auto;
+    padding: 1rem;
+    max-width: 1000px;
+    align-items: center;
+    margin: auto;
+    
+   
+    ul {
+        display: flex;
+        list-style: none;
+        gap: 1.4rem;
+        justify-self: flex-end;
+        margin: 0 0 0 auto;
+        li {
+            font-size: 1.4rem;
+            list-style: none;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+}
+
+.nav-profile-pic img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 80px;
+}

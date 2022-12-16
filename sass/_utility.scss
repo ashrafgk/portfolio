@@ -1,0 +1,47 @@
+
+:root {
+    --bg: #1A1B1E;
+    --bg--blue: #232a3a;
+    --text--offwhite: hsl(0deg 0% 85%);
+  }
+
+
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+.gap-south-sm {
+    margin-bottom: 1.5rem;
+}
+
+.gap-south-md {
+    margin-bottom: 2.5rem;
+}
+
+.gap-south-lg {
+    margin-bottom: 4rem;
+}
+
+.gap-south-xl {
+    margin-bottom: 6.5rem;
+}
+
+img {
+    max-width: 100%;
+    margin: auto;
+}
+
+ul li {
+    list-style: square;
+    margin-bottom: 0.3rem;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
