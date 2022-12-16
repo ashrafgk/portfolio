@@ -54,15 +54,11 @@ header {
         line-height: 1;
         position: relative;
         text-align: left;
-        // opacity: 0;
-        // transition: 1s opacity 4s ease-out;
     }
 
     h2 {
         font-size: 3rem;
         position: relative;
-        // opacity: 0;
-        // transition: 1s opacity 4.5s ease-out;
     }
 }
 
@@ -161,6 +157,13 @@ section.is-visible {
     grid-gap: 5rem;
     height: 100vh;
     align-items: center;
+}
+
+.feature {
+    p {
+        max-width: 800px;
+        margin: auto;
+    }
 }
 
 .container--gallery {
@@ -345,9 +348,9 @@ section.is-visible {
 
     .lazyload, .lazyloading  {
         opacity: 0;
-        transition: 2s opacity 2s ease;
+        transition: 0.25s opacity 0.25s ease;
     }
     .lazyloaded {
         opacity: 1;
-        transition: 2s opacity 2s ease;
+        transition: 0.25s opacity 0.25s ease;
     }
