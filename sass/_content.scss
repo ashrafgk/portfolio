@@ -349,5 +349,5 @@ section.is-visible {
     }
     .lazyloaded {
         opacity: 1;
-        
+        transition: 2s opacity 2s ease;
     }
