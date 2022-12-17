@@ -1,11 +1,12 @@
 
 :root {
-    --bg: #1A1B1E;
+    --bg: #0A091B;
     --bg--blue: #232a3a;
-    --text--offwhite: hsl(0deg 0% 85%);
+    --text--offwhite: #EDECF9;
+    --text--headers: #6B47EB;
   }
 
-
+$layout-breakpoint-small: 1440px;
 
 .text-bold {
     font-weight: bold;
@@ -37,4 +38,10 @@ img {
     margin: auto;
 }
 
+ul li {
+    margin-bottom: 1rem;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
 

@@ -1,6 +1,6 @@
 h1 {
     font-size: 4.75rem;
-    color: #DD4A38;
+    color: var(--text--headers);
     font-weight: bold;
     line-height: 1.25;
 }
@@ -9,36 +9,35 @@ h2 {
     font-size: 4.25rem;
     font-weight: bold;
     line-height: 1.25;
+    color: var(--text--headers);
 }
 h3 {
     font-size: 3.25rem;
     font-weight: bold;
     line-height: 1.25;
+    color: var(--text--headers);
 }
 
 p {
     font-size: 1.25rem;
     line-height: 1.5;
+    color: var(--text--offwhite);
     &:not(:last-child) {
         margin-bottom: 1rem;
     }
 }
 
-ul {
-    padding-left: 20px;
-    li {
-        font-size: 1.25rem;
-        list-style: square;
-        margin-bottom: 0.3rem;
-        
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-}
-
-
 a {
     color: inherit;
     text-decoration: none;
+}
+
+li {
+    color: var(--text--offwhite);
+}
+
+span.highlight {
+    background-color: var(--text--headers);
+    color: var(--text--offwhite);
+    padding: 0.25rem;
 }

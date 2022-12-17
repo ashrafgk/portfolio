@@ -1,9 +1,7 @@
 
 header.navbar {
-    position: sticky;
-    top: 0;
     z-index: 100;
-    background-color: var(--bg);
+    margin-bottom: 2rem;
 }
 nav {
     display: grid;
@@ -12,13 +10,15 @@ nav {
     max-width: 1000px;
     align-items: center;
     margin: auto;
+    @media (max-width: $layout-breakpoint-small) {
+        max-width: 800px;
+      }
     ul {
         display: flex;
         list-style: none;
         gap: 1.4rem;
         justify-self: flex-end;
         margin: 0 0 0 auto;
-        padding: 0;
         li {
             font-size: 1.4rem;
             list-style: none;

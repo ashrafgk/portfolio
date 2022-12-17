@@ -1,54 +1,29 @@
-// const sections = [...document.querySelectorAll("section")];
+/*
+  JavaScript version of the CSS-Only https://codepen.io/bramus/pen/vYXQGXo
+*/
 
-// let options = {
-//     rootMargin: "0px",
-//     threshold: 0.75
-// };
 
-// const callback = (entries, observer) => {
-//     entries.forEach(entry => {
-//         const { target } = entry;
 
-//         if (entry.intersectionRatio >= 0.75) {
-//             target.classList.add("is-visible");
-//         } else {
-//             target.classList.remove("is-visible");
-//         }
-//     });
-// };
+const $images = document.querySelectorAll(".revealing-image");
 
-// const observer = new IntersectionObserver(callback, options);
-
-// sections.forEach((section, index) => {
-//     const sectionChildren = [...section.querySelector("[data-content]").children];
-
-//     sectionChildren.forEach((el, index) => {
-//         el.style.setProperty("--delay", `${index * 250}ms`);
-//     });
-
-//     observer.observe(section);
-// });
-
-const sections = [...document.querySelectorAll("section")];
-
-let options = {
-    rootMargin: "0px",
-    threshold: 0.25
-};
-
-const callback = (entries, observer) => {
-    entries.forEach(entry => {
-        const { target } = entry;
-        console.log(entry, target)
-
-        if (entry.intersectionRatio >= 0.25) {
-            target.classList.add("is-visible");
-        } 
-    });
-};
-
-const observer = new IntersectionObserver(callback, options);
-
-sections.forEach((section, index) => {
-    observer.observe(section);
+$images.forEach(($image) => {
+	$image.animate(
+		{
+			opacity: [0, 1],
+			clipPath: ['inset(80% 10% )', 'inset(0% 0%)'],
+		},
+		{
+			duration: 1,
+			fill: "both",
+			timeline: new ScrollTimeline({
+				scrollSource: document.documentElement,
+				timeRange: 1,
+				fill: "both",
+				scrollOffsets: [
+					{ target: $image, edge: 'end', threshold: 0.05 },
+					{ target: $image, edge: 'end', threshold: 1 },
+				],
+			}),
+		}
+	);
 });

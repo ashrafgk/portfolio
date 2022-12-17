@@ -1,5 +1,7 @@
+
+@import 'utility';
 body {
-    background-color: #1A1B1E;
+    background-color: var(--bg);
     font-family: "Inter";
     font-weight: 400;
     font-style: normal;
@@ -54,11 +56,15 @@ header {
         line-height: 1;
         position: relative;
         text-align: left;
+        // opacity: 0;
+        // transition: 1s opacity 4s ease-out;
     }
 
     h2 {
         font-size: 3rem;
         position: relative;
+        // opacity: 0;
+        // transition: 1s opacity 4.5s ease-out;
     }
 }
 
@@ -103,88 +109,19 @@ section.is-visible .profile-picture:before {
         position: relative;
     }
 }
-// .translated-screen2 {
-//     background: #121212;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     transition: 2s transform 1s ease;
-//     transform: translateX(0%) scaleX(0);
-// }
 
-section.is-visible {
-    // .translated-screen2 {
-    //    transform: translateX(0%) scaleX(1);
-    // }
-    // .profile-picture {
-    //     img {
-    //          transform: scale(1);
-    //     }
-    // }
-    // .profile-picture:before {
-    //     transform: translateX(0%) scaleX(1);
-    // }
-
-
-} 
-
-.gallery {
-    background: white;
-    position: relative;
-    z-index: 2;
-}
-
-.gap-south-1 {
-    margin-bottom: 1rem;
-}
-
-.gap-south-2 {
-    margin-bottom: 2rem;
-}
-
-.introduction {
-    color: white;
-    position: relative;
-    z-index: 2;
-}
-
-
-.row-figure {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 5rem;
-    height: 100vh;
-    align-items: center;
-}
-
-.feature {
-    p {
-        max-width: 800px;
-        margin: auto;
-    }
-}
-
-.container--gallery {
-    width: 1400px;
-    margin: auto;
-}
 .grid--gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 3rem;
-    align-items: center;
+   
     figure {
         margin-bottom: 1rem;
     }
-    h2 {
+    h3 {
         font-size: 2rem;
         font-weight: bold;
-        color: #DD4A38;
+        color: #603AE9;
     }
-    h3 {
-        font-size: 1.52rem;
+    h4 {
+        font-size: 1.50rem;
         font-weight: bold;
         color: #DADADA;
     }
@@ -207,6 +144,11 @@ section.is-visible {
       var(--popout) [popout-end]
       var(--feature) [feature-end]
       var(--full) [full-end];
+
+      @media (max-width: $layout-breakpoint-small) {
+        --popout: minmax(0, 50px);
+        --feature: minmax(0, 100px);
+      }
   }
 
   .content > * {
@@ -223,12 +165,21 @@ section.is-visible {
     grid-column: full;
   }
 
-  .content-header--grid {
+  .work-intro--grid {
       display: grid;
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 1fr 1fr 2fr;
       grid-gap: 2rem;
-      h1 {
-        margin-top: -1rem;
+      h2 {
+       font-size: 1.25rem;
+       margin-bottom: 2rem;
+       &:after {
+        display: block;
+        content: "";
+        width: 100%;
+        height: 2px;
+        margin-top: 1rem;
+        background-color: white;
+       }
       }
   }
   /* ---- Debug styles ---- */
@@ -250,7 +201,7 @@ section.is-visible {
     height: 100vh;
     grid-row: 1 / -1;
     border-radius: 0;
-    border-inline: 1px dashed white;
+    border-inline: 2px dashed #6b47eb;
   }
   
   .debug > *[class]::before,
@@ -272,17 +223,6 @@ section.is-visible {
     right: var(--pseudo-offset);
   }
   
-//   .debug > .popout {
-//     --column: "Popout";
-//   }
-  
-//   .debug > .feature {
-//     --column: "Feature";
-//   }
-  
-//   .debug > .full {
-//     --column: "Full";
-//   }
   
   [id="debug"],
   [id="debug"] + label {
@@ -310,47 +250,80 @@ section.is-visible {
         }
    
   }
-
-  .color-box{
-      width: 400px;
-      height: 100px;
+  #progress {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 10px;
+    width: 100vw;
+    height: 15px;
+    transform-origin: 0 50%;
+    transform: scaleX(0);
+    background: red;
+  }  
+  @keyframes progress {
+    to {
+      transform: scaleX(1);
+    }
   }
-    .slate-dark-1 {
-    background-color: hsl(250,8,8);
-    }
-    .slate-dark-2 {
-    background-color: hsl(250,8,10);
-    }
-    .slate-dark-3 {
-    background-color: hsl(250,8,14);
-    }
-    .slate-dark-4 {
-    background-color: hsl(250,8,20);
-    }
-    .slate-dark-5 {
-    background-color: hsl(250,8,26);
-    }
-    .slate-dark-6 {
-        background-color: hsl(250,8,32);
-    }
-    .slate-dark-7 {
-        background-color: hsl(250,8,44);
-    }
-    .slate-dark-8 {
-        background-color: hsl(250,8,56);
-    }
-    .slate-dark-9 {
-        background-color: hsl(250,8,78);
-    }
-    .slate-dark-10 {
-        background-color: hsl(250,8,86);
-    }
+  
+  @scroll-timeline progress-timeline {
+  }
+  
+  #progress {
+    transform: scaleX(0);
+    animation: 1s linear forwards progress;
+    animation-timeline: progress-timeline;
+  }
+  
+  @keyframes reveal {
+	to {
+		clip-path: inset(0% 0% 0% 0%);
+		opacity: 1;
+	}
+}
+  .revealing-image {
+    opacity: 0;
+    clip-path: inset(45% 20%);
+    animation: reveal 2s linear;
+    animation-fill-mode: forwards;
+  }
 
-    .lazyload, .lazyloading  {
-        opacity: 0;
-        transition: 0.25s opacity 0.25s ease;
-    }
-    .lazyloaded {
-        opacity: 1;
-        transition: 0.25s opacity 0.25s ease;
-    }
+  @scroll-timeline revealing-image-timeline-1 {
+    source: auto;
+    start: selector(#revealing-image-1) end 0.5;
+    end: selector(#revealing-image-1) end 1;
+    scroll-offsets: selector(#revealing-image-1) end 0.5,
+      selector(#revealing-image-1) end 1;
+    time-range: 2s;
+  }
+
+  @scroll-timeline revealing-image-timeline-2 {
+    source: auto;
+    start: selector(#revealing-image-2) end 0.5;
+    end: selector(#revealing-image-2) end 1;
+    scroll-offsets: selector(#revealing-image-2) end 0.5,
+      selector(#revealing-image-2) end 1;
+    time-range: 2s;
+  }
+
+  @scroll-timeline revealing-image-timeline-3 {
+    source: auto;
+    start: selector(#revealing-image-3) end 0.5;
+    end: selector(#revealing-image-3) end 1;
+    scroll-offsets: selector(#revealing-image-3) end 0.5,
+      selector(#revealing-image-3) end 1;
+    time-range: 2s;
+  }
+  #revealing-image-1 {
+    animation-timeline: revealing-image-timeline-1;
+  }
+  
+  #revealing-image-2 {
+    animation-timeline: revealing-image-timeline-2;
+  }
+  #revealing-image-3 {
+    animation-timeline: revealing-image-timeline-3;
+  }
+
+    
