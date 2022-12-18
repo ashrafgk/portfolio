@@ -13,13 +13,6 @@ body {
 }
 
 
-
-@font-face {
-	font-family: 'Inter';
-	src: url('font/Inter-VariableFont_slnt,wght.ttf') format('truetype') tech('variations'),
-
-}
-
 .container {
     width: 900px;
     margin: auto;
@@ -281,6 +274,22 @@ section.is-visible .profile-picture:before {
 		clip-path: inset(0% 0% 0% 0%);
 		opacity: 1;
 	}
+}
+
+@keyframes blur {
+    0% {
+     opacity: 0;
+     
+    }
+	100% {
+    opacity: 1;
+		 
+	}
+}
+.blur-animation {
+    animation: blur 2s linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
 }
   .revealing-image {
     opacity: 0;

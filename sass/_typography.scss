@@ -1,8 +1,11 @@
+@import 'utility';
+
 h1 {
     font-size: 4.75rem;
     color: var(--text--headers);
     font-weight: bold;
     line-height: 1.25;
+    font-family: soleil,sans-serif;
 }
 
 h2 {
@@ -10,15 +13,18 @@ h2 {
     font-weight: bold;
     line-height: 1.25;
     color: var(--text--headers);
+    font-family: soleil,sans-serif;
 }
 h3 {
     font-size: 3.25rem;
     font-weight: bold;
     line-height: 1.25;
     color: var(--text--headers);
+    font-family: soleil,sans-serif;
 }
 
 p {
+    font-family: soleil,sans-serif;
     font-size: 1.25rem;
     line-height: 1.5;
     color: var(--text--offwhite);

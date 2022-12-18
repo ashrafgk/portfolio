@@ -1,11 +1,16 @@
 
 :root {
-    --bg: #0A091B;
+    --bg: #0D0B22;
     --bg--blue: #232a3a;
     --text--offwhite: #EDECF9;
     --text--headers: #6B47EB;
   }
 
+body {
+    font-family: soleil,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 $layout-breakpoint-small: 1440px;
 
 .text-bold {

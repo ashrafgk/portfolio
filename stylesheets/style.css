@@ -1,8 +1,14 @@
 :root {
-  --bg: #0A091B;
+  --bg: #0D0B22;
   --bg--blue: #232a3a;
   --text--offwhite: #EDECF9;
   --text--headers: #6B47EB;
+}
+
+body {
+  font-family: soleil, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .text-bold {
@@ -53,10 +59,6 @@ body {
   color: white;
 }
 
-@font-face {
-  font-family: "Inter";
-  src: url("font/Inter-VariableFont_slnt,wght.ttf") format("truetype") tech("variations");
-}
 .container {
   width: 900px;
   margin: auto;
@@ -295,6 +297,20 @@ figure.wide img {
     opacity: 1;
   }
 }
+@keyframes blur {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.blur-animation {
+  animation: blur 2s linear;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
 .revealing-image {
   opacity: 0;
   clip-path: inset(45% 20%);
@@ -336,10 +352,65 @@ figure.wide img {
 }
 
 :root {
-  --bg: #0A091B;
+  --bg: #0D0B22;
   --bg--blue: #232a3a;
   --text--offwhite: #EDECF9;
   --text--headers: #6B47EB;
+}
+
+body {
+  font-family: soleil, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.gap-south-sm {
+  margin-bottom: 1.5rem;
+}
+
+.gap-south-md {
+  margin-bottom: 2.5rem;
+}
+
+.gap-south-lg {
+  margin-bottom: 4rem;
+}
+
+.gap-south-xl {
+  margin-bottom: 6.5rem;
+}
+
+img {
+  max-width: 100%;
+  margin: auto;
+}
+
+ul li {
+  margin-bottom: 1rem;
+}
+ul li:last-child {
+  margin-bottom: 0;
+}
+
+:root {
+  --bg: #0D0B22;
+  --bg--blue: #232a3a;
+  --text--offwhite: #EDECF9;
+  --text--headers: #6B47EB;
+}
+
+body {
+  font-family: soleil, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .text-bold {
@@ -418,11 +489,61 @@ nav ul a {
   width: 80px;
 }
 
+:root {
+  --bg: #0D0B22;
+  --bg--blue: #232a3a;
+  --text--offwhite: #EDECF9;
+  --text--headers: #6B47EB;
+}
+
+body {
+  font-family: soleil, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.gap-south-sm {
+  margin-bottom: 1.5rem;
+}
+
+.gap-south-md {
+  margin-bottom: 2.5rem;
+}
+
+.gap-south-lg {
+  margin-bottom: 4rem;
+}
+
+.gap-south-xl {
+  margin-bottom: 6.5rem;
+}
+
+img {
+  max-width: 100%;
+  margin: auto;
+}
+
+ul li {
+  margin-bottom: 1rem;
+}
+ul li:last-child {
+  margin-bottom: 0;
+}
+
 h1 {
   font-size: 4.75rem;
   color: var(--text--headers);
   font-weight: bold;
   line-height: 1.25;
+  font-family: soleil, sans-serif;
 }
 
 h2 {
@@ -430,6 +551,7 @@ h2 {
   font-weight: bold;
   line-height: 1.25;
   color: var(--text--headers);
+  font-family: soleil, sans-serif;
 }
 
 h3 {
@@ -437,9 +559,11 @@ h3 {
   font-weight: bold;
   line-height: 1.25;
   color: var(--text--headers);
+  font-family: soleil, sans-serif;
 }
 
 p {
+  font-family: soleil, sans-serif;
   font-size: 1.25rem;
   line-height: 1.5;
   color: var(--text--offwhite);
