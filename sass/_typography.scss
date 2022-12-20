@@ -42,8 +42,13 @@ li {
     color: var(--text--offwhite);
 }
 
-span.highlight {
-    background-color: var(--text--headers);
+.highlight {
+    background-color: var(--bg-3);
     color: var(--text--offwhite);
     padding: 0.25rem;
 }
+
+.subtitle {
+    font-size: 1rem;
+    font-style: italic;
+  }
