@@ -80,9 +80,7 @@ header {
 }
 .feature {
   grid-column: feature;
-  figure {
-    background-color: var(--bg-3);
-  }
+  
 }
 .full {
   grid-column: full;
@@ -289,6 +287,8 @@ figure.f-vertical-center {
   animation-timeline: revealing-image-timeline-3;
 }
 
-figure {
-  
+.case-study {
+  figure {
+    background-color: var(--bg-3);
+  }
 }

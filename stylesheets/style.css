@@ -35,7 +35,7 @@ body {
 }
 
 .gap-south-xl {
-  margin-bottom: 7.25rem;
+  margin-bottom: 8rem;
 }
 
 img {
@@ -118,9 +118,6 @@ header h2 {
 
 .feature {
   grid-column: feature;
-}
-.feature figure {
-  background-color: var(--bg-3);
 }
 
 .full {
@@ -315,6 +312,10 @@ figure.f-vertical-center:hover .case-study-link {
   animation-timeline: revealing-image-timeline-3;
 }
 
+.case-study figure {
+  background-color: var(--bg-3);
+}
+
 :root {
   --bg: #0D0B22;
   --bg-2: #150E2A;
@@ -352,7 +353,7 @@ body {
 }
 
 .gap-south-xl {
-  margin-bottom: 7.25rem;
+  margin-bottom: 8rem;
 }
 
 img {
@@ -405,7 +406,7 @@ body {
 }
 
 .gap-south-xl {
-  margin-bottom: 7.25rem;
+  margin-bottom: 8rem;
 }
 
 img {
@@ -498,7 +499,7 @@ body {
 }
 
 .gap-south-xl {
-  margin-bottom: 7.25rem;
+  margin-bottom: 8rem;
 }
 
 img {
