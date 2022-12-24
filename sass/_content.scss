@@ -11,26 +11,53 @@ body {
     line-height: 1.3;
     color: white;
 }
+@keyframes moveDown {
+  0% {
+   opacity: 0;
+   transform: translateY(-10px);
+   
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 
 header {
-    position: relative;
-    overflow: hidden;
-
+  
     h1 {
-        line-height: 1;
-        position: relative;
-        text-align: left;
-        // opacity: 0;
-        // transition: 1s opacity 4s ease-out;
+        opacity: 0;
+        transform: translateY(-10px);
+        animation: 1.3s moveDown 0.5s ease-out;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
     }
 
-    h2 {
-        font-size: 3rem;
-        position: relative;
-        // opacity: 0;
-        // transition: 1s opacity 4.5s ease-out;
+    h2:nth-child(2) {
+      opacity: 0;
+        transform: translateY(-10px);
+        animation: 1.25s moveDown 1s ease-out;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
     }
+    h2:nth-child(3) {
+      opacity: 0;
+        transform: translateY(-10px);
+      animation: 1.2s moveDown 1.5s ease-out;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+  }
+  h2:nth-child(4) {
+    opacity: 0;
+        transform: translateY(-10px);
+    animation: 1.1s moveDown 2s ease-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
 }
+}
+
+
 
 .grid--gallery {
     figure {
@@ -183,7 +210,7 @@ figure.wide {
 @keyframes blur {
     0% {
      opacity: 0;
-     filter: blur(19px);
+    
      
     }
 	100% {
