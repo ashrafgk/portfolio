@@ -165,6 +165,9 @@ header {
    z-index: -10;
    opacity: 0.22;
     transition: opacity 200ms ease-out;
+    @media (max-width: $layout-breakpoint-mobile) {
+      display: none;
+  }
   }
   
 .debug > * {
@@ -360,6 +363,7 @@ video {
   z-index:0;
   transition:  0.25s box-shadow 0.25s;
   margin: auto;
+  width: 100%;
 }
 .scaleup {
   box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.45);
@@ -390,5 +394,5 @@ video {
   justify-content: center; 
   border-radius: 0.75rem; 
   z-index: 1; 
-  width: 1280px;
+ 
 }

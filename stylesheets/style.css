@@ -206,6 +206,11 @@ header h2:nth-child(4) {
   opacity: 0.22;
   transition: opacity 200ms ease-out;
 }
+@media (max-width: 700px) {
+  .debug {
+    display: none;
+  }
+}
 
 .debug > * {
   --pseudo-offset: 0.25rem;
@@ -382,6 +387,7 @@ video {
   z-index: 0;
   transition: 0.25s box-shadow 0.25s;
   margin: auto;
+  width: 100%;
 }
 
 .scaleup {
@@ -418,7 +424,6 @@ video {
   justify-content: center;
   border-radius: 0.75rem;
   z-index: 1;
-  width: 1280px;
 }
 
 :root {
