@@ -24,19 +24,18 @@
     <script src="https://rawcdn.githack.com/flackr/scroll-timeline/637746fa559c3f9d01fcdaf2fcb7e649d18dfc33/dist/scroll-timeline.js"></script>
 </head>
 
-<body>
+<body style="overflow-x: hidden;">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8M6PG"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <img src="img/Frame 1314.svg" style="position: absolute;width: 1400px;left:0;right: 0;top: -500px; display; block; z-index: -10;" class="blur-animation">
+    <img src="img/bg-gradient.jpg" style="position: absolute;width: 1400px;left: 0;right: 0;z-index: -10;top: -80px;" class="blur-animation">
     <header class="navbar">
         <nav>
             <div class="nav-profile-pic">
                 <img src="https://pbs.twimg.com/profile_images/1575683565546774528/jhZTOJel_200x200.jpg" alt="Ashraf Khattab" width="70" height="70">
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="img/ashraf-khattab-resume.pdf">Resume</a></li>
@@ -44,12 +43,10 @@
         </nav>
     </header>
     <div class="">
-         <div class="content" style="position: relative; z-index: 1;">
+         <div class="content" style="position: relative; z-index: 1; height: calc(100svh - 137px);align-items: center;justify-content: center;">
             <header class="text-center gap-south-lg" style="">
-                <h1 class="bold" style="color: var(--text--offwhite);">Ashraf Khattab</h1>
-                <h2>Product Designer</h2>
-                <h2>People Manager</h2>
-                <h2 class="gap-south-md"> Talent Mentor</h2>
+                <h1 class="bold" style="background-image: url(img/bg-gradient.jpg);">Ashraf Khattab</h1>
+                <h2>Product Designer <span>&#8226;</span> People Manager <span>&#8226;</span> Talent Mentor</h2>
             </header>
         </div>
         <div class="content" style="position: relative; z-index: 1;">
@@ -74,7 +71,7 @@
                 </figure>
             </div>
             <div class="gap-south-xl">
-                <h3>Easy sharing and published views</h3>
+                <h3><a href="easy-sharing.html">Easy sharing and published views</a></h3>
                 <h4>UI/UX</h4>
             </div>
             <div class="feature">
@@ -84,7 +81,7 @@
                 </figure>
             </div>
             <div class="gap-south-xl">
-                <h3>Onboarding</h3>
+                <h3><a href="sign-up-onboarding.html">Onboarding</a></h3>
                 <h4>UI/UX</h4>
             </div>
             <div class="feature">
@@ -94,7 +91,7 @@
                 </figure>
             </div>
             <div class="gap-south-xl">
-                <h3>Annotations</h3>
+                <h3><a href="annotations.html">Annotations</a></h3>
                 <h4>UI/UX</h4>
             </div>
         </div>

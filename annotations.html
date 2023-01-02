@@ -115,9 +115,18 @@
             </div>
              <div class="feature gap-south-lg">
                 <figure class="text-center" style="padding: 50px;">
-                    <video controls muted loop> 
-                        <source src="img/video--annotations.mp4" type="video/mp4" />
-                    </video>
+                   
+                    <div class="video-screenshot" style="position: relative;">
+                        <div class="video-bg" id="bg-black"></div>
+                        <div id="vidbutton" class="video-button" onclick="playVid()">
+                            <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 93 93" style="width: 80px; height: 80px;">
+                                <path d="M70.829 42.43c4.228 2.232 4.228 5.886 0 8.118L35.686 69.105C31.461 71.337 28 69.25 28 64.465V28.537c0-4.782 3.461-6.88 7.689-4.637l35.14 18.53Z" fill="#fff" />
+                            </svg>
+                        </div>
+                        <video id="myvid" class="video-src" loop onclick="pauseVid()">
+                            <source src="img/video--annotations.mp4" type="video/mp4" />
+                        </video>
+                    </div>
                 </figure>
             </div>
            
