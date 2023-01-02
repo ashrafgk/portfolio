@@ -2,14 +2,19 @@
 
 h1 {
     font-size: 5.25rem;
+    font-size: clamp(3.8rem, 10vw, 6rem);
     color: var(--text--headers);
     font-weight: bold;
     line-height: 1.25;
     font-family: soleil,sans-serif;
+    @media (max-width: $layout-breakpoint-mobile) {
+        line-height: 1.05;
+    }
 }
 
 h2 {
-    font-size: 4rem;
+    // font-size: 4rem;
+    font-size: clamp(1.8rem, 6vw, 4rem);
     font-weight: bold;
     line-height: 1.25;
     color: var(--text--headers);

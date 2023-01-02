@@ -11,18 +11,28 @@ nav {
     max-width: 1000px;
     align-items: center;
     margin: auto;
+    @media (max-width: $layout-breakpoint-mobile) {
+        grid-template-columns: 70px auto;
+    }
     @media (max-width: $layout-breakpoint-small) {
         max-width: 800px;
-      }
+    }
     ul {
         display: flex;
         list-style: none;
         gap: 1.4rem;
         justify-self: flex-end;
         margin: 0 0 0 auto;
+        @media (max-width: $layout-breakpoint-mobile) {
+            gap: 1.8rem;
+        }
         li {
             font-size: 1.4rem;
             list-style: none;
+            margin: 0;
+            @media (max-width: $layout-breakpoint-mobile) {
+                font-size: 1.2rem;
+            }
         }
         a {
             color: white;

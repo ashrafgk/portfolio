@@ -79,6 +79,7 @@ header h1 {
   animation: 1.3s moveDown 0.5s ease-out;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
+  margin-bottom: 1.5rem;
 }
 header h2:nth-child(2) {
   opacity: 0;
@@ -153,6 +154,12 @@ header h2:nth-child(4) {
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
   grid-gap: 2rem;
+}
+@media (max-width: 700px) {
+  .work-intro--grid {
+    grid-template-columns: auto;
+    grid-gap: 4rem;
+  }
 }
 .work-intro--grid h2 {
   font-size: 1.25rem;
@@ -459,6 +466,11 @@ nav {
   align-items: center;
   margin: auto;
 }
+@media (max-width: 700px) {
+  nav {
+    grid-template-columns: 70px auto;
+  }
+}
 @media (max-width: 1440px) {
   nav {
     max-width: 800px;
@@ -471,9 +483,20 @@ nav ul {
   justify-self: flex-end;
   margin: 0 0 0 auto;
 }
+@media (max-width: 700px) {
+  nav ul {
+    gap: 1.8rem;
+  }
+}
 nav ul li {
   font-size: 1.4rem;
   list-style: none;
+  margin: 0;
+}
+@media (max-width: 700px) {
+  nav ul li {
+    font-size: 1.2rem;
+  }
 }
 nav ul a {
   color: white;
@@ -541,14 +564,20 @@ ul li:last-child {
 
 h1 {
   font-size: 5.25rem;
+  font-size: clamp(3.8rem, 10vw, 6rem);
   color: var(--text--headers);
   font-weight: bold;
   line-height: 1.25;
   font-family: soleil, sans-serif;
 }
+@media (max-width: 700px) {
+  h1 {
+    line-height: 1.05;
+  }
+}
 
 h2 {
-  font-size: 4rem;
+  font-size: clamp(1.8rem, 6vw, 4rem);
   font-weight: bold;
   line-height: 1.25;
   color: var(--text--headers);
