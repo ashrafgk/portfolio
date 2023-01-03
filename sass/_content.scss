@@ -41,18 +41,21 @@ header {
         animation-iteration-count: 1;
         margin-bottom: 0rem;
         background-size: 160%;
-       background-position: 50% -420px;
+        background-position: 50% -420px;
         background-repeat: no-repeat;
         color: #fff;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-transform: uppercase;
+        @media (max-width: $layout-breakpoint-mobile) {
+          margin-bottom: 1rem;
+        }
     }
 
     h2 {
       font-size: 1.75rem;
       display: flex;
-      align-items: stretch;
+      align-items: center;
       justify-content: space-between;
       @media (max-width: $layout-breakpoint-mobile) {
         font-size: 1.0rem;
@@ -253,9 +256,18 @@ figure.wide {
 	}
 }
 .blur-animation {
-    animation: blur 3s linear;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
+  position: absolute;
+  width: 1400px;
+  left: 0;
+  right: 0;
+  z-index: -10;
+  top: -80px;
+  animation: blur 3s linear;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  @media (max-width: $layout-breakpoint-mobile) {
+    top: -10px;
+  }
 }
 .case-study-link {
   position: absolute;
@@ -355,6 +367,13 @@ figure.f-vertical-center {
       background-color: var(--bg-2);
       padding: 2rem;
       margin-bottom: 2rem;
+    }
+    
+  }
+  .feature figure {
+    padding: 30px;
+    @media (max-width: $layout-breakpoint-mobile) {
+      padding: 15px;
     }
   }
 }
