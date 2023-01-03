@@ -66,9 +66,11 @@ body {
 @keyframes moveDown {
   0% {
     background-position: 50% -420px;
+    transform: translateY(-10px);
   }
   100% {
     background-position: 50% -30px;
+    transform: translateY(0px);
   }
 }
 @keyframes moveDown2 {
@@ -100,6 +102,12 @@ header h2 {
   display: flex;
   align-items: stretch;
   justify-content: space-between;
+}
+@media (max-width: 700px) {
+  header h2 {
+    font-size: 1rem;
+    line-height: 1.05;
+  }
 }
 header h2:nth-child(2) {
   opacity: 0;
@@ -428,7 +436,7 @@ figure.case-study--hero {
   display: flex;
 }
 figure.case-study--hero img {
-  max-height: 60svh;
+  max-height: calc(100svh - 285px);
   margin: auto;
 }
 
@@ -649,7 +657,7 @@ ul li:last-child {
 
 h1 {
   font-size: 5.25rem;
-  font-size: clamp(3.8rem, 10vw, 6.85rem);
+  font-size: clamp(3.8rem, 10vw, 6rem);
   color: var(--text--headers);
   font-weight: bold;
   line-height: 1.25;

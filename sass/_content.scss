@@ -14,9 +14,11 @@ body {
 @keyframes moveDown {
   0% {
     background-position: 50% -420px;
+    transform: translateY(-10px);
   }
   100% {
     background-position: 50% -30px;
+    transform: translateY(0px);
   }
 }
 @keyframes moveDown2 {
@@ -52,6 +54,10 @@ header {
       display: flex;
       align-items: stretch;
       justify-content: space-between;
+      @media (max-width: $layout-breakpoint-mobile) {
+        font-size: 1.0rem;
+        line-height: 1.05;
+      }
     }
 
     h2:nth-child(2) {
@@ -398,7 +404,7 @@ figure.case-study--hero {
   background-color: var(--bg-2);
   display: flex;
   img {
-    max-height: 60svh;
+    max-height: calc(100svh - 285px);
     margin: auto;
   }
 }
