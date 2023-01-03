@@ -52,9 +52,9 @@ function playVid2() {
 }
 
 function playVid3() {
-	var myVideo3 = document.getElementById("myvid2");
-	var videobg3 = document.getElementById("bg-black2");
-	var ppbutton3 = document.getElementById("vidbutton2");
+	var myVideo3 = document.getElementById("myvid3");
+	var videobg3 = document.getElementById("bg-black3");
+	var ppbutton3 = document.getElementById("vidbutton3");
         myVideo3.play();
         myVideo3.setAttribute("controls", "");
 		ppbutton3.style.display = "none";

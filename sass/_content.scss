@@ -240,12 +240,9 @@ figure.wide {
      opacity: 0;
      
     }
-    50% {
-      opacity: 1;
-       
-    }
+   
 	100% {
-    opacity: 0.74;
+    opacity: 1;
 		 
 	}
 }
@@ -395,4 +392,13 @@ video {
   border-radius: 0.75rem; 
   z-index: 1; 
  
+}
+
+figure.case-study--hero {
+  background-color: var(--bg-2);
+  display: flex;
+  img {
+    max-height: 60svh;
+    margin: auto;
+  }
 }
