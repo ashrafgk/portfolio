@@ -84,7 +84,7 @@ body {
   }
 }
 header h1 {
-  font-size: clamp(2rem, 10vw, 5.85rem);
+  font-size: clamp(2rem, 10vw, 7.38rem);
   animation: 2s moveDown 0.5s ease-out;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
@@ -103,7 +103,7 @@ header h1 {
   }
 }
 header h2 {
-  font-size: 1.75rem;
+  font-size: 2.15rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -272,10 +272,11 @@ figure.wide {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  box-sizing: border-box;
 }
 figure.wide img {
   margin: 0;
-  max-height: 60lvh;
+  max-height: 40lvh;
   max-width: none;
 }
 
