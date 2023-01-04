@@ -50,6 +50,9 @@ header {
         @media (max-width: $layout-breakpoint-mobile) {
           margin-bottom: 1rem;
         }
+        @media (max-width: $layout-breakpoint-small) {
+          font-size: clamp(2rem, 10vw, 6.638rem);
+        }
     }
 
     h2 {
@@ -236,7 +239,18 @@ figure.wide {
       }
   
 }
-  
+.footer {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.social-media {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  a svg { width: 20px; height: 20px;}
+}
   
 @keyframes reveal {
 	to {
