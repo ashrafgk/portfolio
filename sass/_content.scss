@@ -1,4 +1,3 @@
-
 @import 'utility';
 body {
     background-color: var(--bg);
@@ -11,6 +10,8 @@ body {
     line-height: 1.3;
     color: white;
 }
+
+//////////////////////////////// homepage header
 @keyframes moveDown {
   0% {
     background-position: 50% -420px;
@@ -31,30 +32,27 @@ body {
     transform: translateY(0px);
   }
 }
-
 header {
-  
     h1 {
       font-size: clamp(2rem, 10vw, 7.38rem);
-        animation: 2s moveDown 0.5s ease-out;
-        animation-fill-mode: forwards;
-        animation-iteration-count: 1;
-        margin-bottom: 0rem;
-        background-size: 160%;
-        background-position: 50% -420px;
-        background-repeat: no-repeat;
-        color: #fff;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-transform: uppercase;
-        @media (max-width: $layout-breakpoint-mobile) {
-          margin-bottom: 1rem;
-        }
-        @media (max-width: $layout-breakpoint-small) {
-          font-size: clamp(2rem, 10vw, 6.638rem);
-        }
+      animation: 2s moveDown 0.5s ease-out;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+      margin-bottom: 0rem;
+      background-size: 160%;
+      background-position: 50% -420px;
+      background-repeat: no-repeat;
+      color: #fff;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      @media (max-width: $layout-breakpoint-mobile) {
+        margin-bottom: 1rem;
+      }
+      @media (max-width: $layout-breakpoint-1440) {
+        font-size: clamp(2rem, 10vw, 6.9rem);
+      }
     }
-
     h2 {
       font-size: 2.15rem;
       display: flex;
@@ -65,48 +63,41 @@ header {
         line-height: 1.05;
       }
     }
-
     h2:nth-child(2) {
       opacity: 0;
-        transform: translateY(-10px);
-        animation: 1.2s moveDown2 2.5s ease-out;
-        animation-fill-mode: forwards;
-        animation-iteration-count: 1;
-    }
-    h2:nth-child(3) {
-      opacity: 0;
-        transform: translateY(-10px);
-      animation: 1.2s moveDown2 3.5s ease-out;
+      transform: translateY(-10px);
+      animation: 1.2s moveDown2 2.5s ease-out;
       animation-fill-mode: forwards;
       animation-iteration-count: 1;
-  }
-    h2:nth-child(4) {
-      opacity: 0;
-          transform: translateY(-10px);
-      animation: 1.1s moveDown2 4s ease-out;
-      animation-fill-mode: forwards;
-      animation-iteration-count: 1;
-  }
-}
-
-
-
-.grid--gallery {
-    figure {
-        margin-bottom: 1rem;
-    }
-    h3 {
-        font-size: 2rem;
-        font-weight: bold;
-        color: #603AE9;
-    }
-    h4 {
-        font-size: 1.50rem;
-        font-weight: bold;
-        color: #DADADA;
     }
 }
+@keyframes blur {
+  0% {
+   opacity: 0;
+   
+  }
+ 
+100% {
+  opacity: 1;
+   
+}
+}
+.blur-animation {
+position: absolute;
+width: 1400px;
+left: 0;
+right: 0;
+z-index: -10;
+top: -80px;
+animation: blur 3s linear;
+animation-fill-mode: forwards;
+animation-iteration-count: 1;
+@media (max-width: $layout-breakpoint-mobile) {
+  top: -10px;
+}
+}
 
+//////////////////////////////// grid
 .content {
     --gap: clamp(1rem, 6vw, 3rem);
     --full: minmax(var(--gap), 1fr);
@@ -125,12 +116,11 @@ header {
       var(--feature) [feature-end]
       var(--full) [full-end];
 
-      @media (max-width: $layout-breakpoint-small) {
-        --popout: minmax(0, 50px);
-        --feature: minmax(0, 100px);
+      @media (max-width: $layout-breakpoint-1440) {
+        --popout: minmax(0, 75px);
+        --feature: minmax(0, 75px);
       }
 }
-
 .content > * {
   grid-column: content;
 }
@@ -144,44 +134,21 @@ header {
 .full {
   grid-column: full;
 }
-
-.work-intro--grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
-    grid-gap: 2rem;
-    @media (max-width: $layout-breakpoint-mobile) {
-      grid-template-columns: auto;
-      grid-gap: 4rem;
-    }
-    h2 {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-      &:after {
-      display: block;
-      content: "";
-      width: 100%;
-      height: 2px;
-      margin-top: 1rem;
-      background-color: white;
-      }
-    }
-}
 /* ---- Debug styles ---- */
 .debug {
-    position: fixed;
-    top: 0;
-    left: 0;
-    grid-template-rows: 1fr;
-    width: 100%;
-    height: 100vh;
-   z-index: -10;
-   opacity: 0.22;
-    transition: opacity 200ms ease-out;
-    @media (max-width: $layout-breakpoint-mobile) {
-      display: none;
-  }
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  grid-template-rows: 1fr;
+  width: 100%;
+  height: 100vh;
+ z-index: -10;
+ opacity: 0.22;
+  transition: opacity 200ms ease-out;
+  @media (max-width: $layout-breakpoint-mobile) {
+    display: none;
+}
+}
 .debug > * {
   --pseudo-offset: 0.25rem;
   position: relative;
@@ -191,7 +158,6 @@ header {
   // border-inline: 2px dashed #6b47eb;
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%236B47EBFF' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
 }
-
 .debug > *[class]::before,
 .debug > *[class]::after {
   content: var(--column);
@@ -202,16 +168,12 @@ header {
   font-size: 0.8em;
   transform: translateY(-50%);
 }
-
 .debug > *::before {
   left: var(--pseudo-offset);
 }
-
 .debug > *::after {
   right: var(--pseudo-offset);
 }
-
-
 [id="debug"],
 [id="debug"] + label {
   position: relative;
@@ -219,70 +181,32 @@ header {
   cursor: pointer;
   user-select: none;
 }
-
 [id="debug"] {
   margin-block: 2rem;
   margin-inline-start: 1rem;
 }
 
-figure.wide {
-    width: 100%;
-    overflow-x: scroll;
-    display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      box-sizing: border-box;
-      img { 
-          margin: 0; 
-          max-height: 40lvh;
-          max-width: none;
-      }
-  
+//////////////////////////////// work gallery
+.grid--gallery {
+    figure {
+        margin-bottom: 1rem;
+    }
+    h3 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #603AE9;
+    }
+    h4 {
+        font-size: 1.50rem;
+        font-weight: bold;
+        color: #DADADA;
+    }
 }
-.footer {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-.social-media {
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  a svg { width: 20px; height: 20px;}
-}
-  
 @keyframes reveal {
 	to {
 		clip-path: inset(0% 0% 0% 0%);
 		opacity: 1;
 	}
-}
-
-@keyframes blur {
-    0% {
-     opacity: 0;
-     
-    }
-   
-	100% {
-    opacity: 1;
-		 
-	}
-}
-.blur-animation {
-  position: absolute;
-  width: 1400px;
-  left: 0;
-  right: 0;
-  z-index: -10;
-  top: -80px;
-  animation: blur 3s linear;
-  animation-fill-mode: forwards;
-  animation-iteration-count: 1;
-  @media (max-width: $layout-breakpoint-mobile) {
-    top: -10px;
-  }
 }
 .case-study-link {
   position: absolute;
@@ -337,7 +261,6 @@ figure.f-vertical-center {
   
   
 }
-
 @scroll-timeline revealing-image-timeline-1 {
   source: auto;
   start: selector(#revealing-image-1) end 0.5;
@@ -355,7 +278,6 @@ figure.f-vertical-center {
     selector(#revealing-image-2) end 1;
   time-range: 2s;
 }
-
 @scroll-timeline revealing-image-timeline-3 {
   source: auto;
   start: selector(#revealing-image-3) end 0.5;
@@ -367,7 +289,6 @@ figure.f-vertical-center {
 #revealing-image-1 {
   animation-timeline: revealing-image-timeline-1;
 }
-
 #revealing-image-2 {
   animation-timeline: revealing-image-timeline-2;
 }
@@ -375,24 +296,103 @@ figure.f-vertical-center {
   animation-timeline: revealing-image-timeline-3;
 }
 
+//////////////////////////////// footer
+.footer {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.social-media {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  a svg { width: 20px; height: 20px;}
+}
+//////////////////////////////// case study page
 .case-study {
   figure {
     background-color: var(--bg-3);
     p {
-      background-color: var(--bg-2);
-      padding: 2rem;
-      margin-bottom: 2rem;
+      padding: 0 2rem;
+      max-width: 660px;
+      margin: 0 auto 3rem;
+      font-size: 1.5rem;
     }
-    
+  }
+  .feature.grid-2 {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 3rem;
+    display: grid;
+    img {
+      width: 800px;
+      height: 450px;
+      object-fit: none;
+      object-position: 100% 0%;
+      border-radius: 0rem 1.5rem 0 0;
+      margin: auto 0px -4rem -4rem;
+      box-shadow: 30px 50px 50px #0a0a1b;
+     
+    }
+    figure {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
   }
   .feature figure {
-    padding: 30px;
+    padding: 4rem;
     @media (max-width: $layout-breakpoint-mobile) {
       padding: 15px;
     }
+    img.screenshot {
+      border-radius: 1rem;
+      box-shadow:  0px 50px 50px #0a0a1b;
+    }
   }
 }
-
+figure.case-study--hero {
+  background-color: var(--bg-2);
+  display: flex;
+  img {
+    max-height: calc(100svh - 285px);
+    margin: auto;
+  }
+}
+.work-intro--grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-gap: 2rem;
+  @media (max-width: $layout-breakpoint-mobile) {
+    grid-template-columns: auto;
+    grid-gap: 4rem;
+  }
+  h2 {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    &:after {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 2px;
+    margin-top: 1rem;
+    background-color: white;
+    }
+  }
+}
+figure.wide {
+  width: 100%;
+  overflow-x: scroll;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  img { 
+      margin: 0; 
+      max-height: 400px;
+      max-width: none;
+  }
+}
 video {
   border-radius: 0.75rem;
   overflow: hidden;
@@ -401,13 +401,8 @@ video {
   transition:  0.25s box-shadow 0.25s;
   margin: auto;
   width: 100%;
+  box-shadow:  0px 50px 50px #0a0a1b;
 }
-.scaleup {
-  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.45);
-  display: block; 
-  z-index:2;
-}
-
 .video-button {
   display:  flex; 
   align-items:  center;
@@ -424,7 +419,6 @@ video {
 .video-bg {
   border-radius: 0.75rem; position:  absolute;width: 100%; height: 100%; background: rgb(0 0 0 / 45%); z-index:1;
 }
-
 .video-screenshot {
   display: flex; 
   align-items: center; 
@@ -434,11 +428,3 @@ video {
  
 }
 
-figure.case-study--hero {
-  background-color: var(--bg-2);
-  display: flex;
-  img {
-    max-height: calc(100svh - 285px);
-    margin: auto;
-  }
-}
